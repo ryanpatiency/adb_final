@@ -1,0 +1,82 @@
+<div>
+	<div class="form-group row">
+		<label for="rooms-number" class="col-sm-2 col-form-label">Rooms Number (Min)</label>
+		<div class="col-sm-10">
+			<select class="custom-select" id='rooms-number'>
+				<option value="0" selected>0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label for="halls-number" class="col-sm-2 col-form-label">Halls Number (Min)</label>
+		<div class="col-sm-10">
+			<select class="custom-select" id='halls-number'>
+				<option value="0" selected>0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label for="berth-number" class="col-sm-2 col-form-label">Berth Number (Min)</label>
+		<div class="col-sm-10">
+			<select class="custom-select" id='berth-number'>
+				<option value="0" selected>0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group row justify-content-start">
+		<label class="col-sm-2 col-form-label">Price Region</label>
+		<div class="col-sm-2">
+			<input type="number" class="form-control" id="price-region-min" placeholder="Min">
+		</div>
+		___
+		<div class="col-sm-2">
+			<input type="number" class="form-control" id="price-region-max" placeholder="Max">
+		</div>
+	</div>
+	<div class="bg-light">
+		<div class="form-group row">
+			<div class="col-sm-2">Filter</div>
+			<div class="col-sm-10">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="use-central-point">
+					<label class="form-check-label" for="use-central-point">
+						Use central point
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id='central-point-div' style="display:none">
+			<div class="form-group row justify-content-start">
+				<label class="col-sm-2 col-form-label">Distance (m)</label>
+				<div class="col-sm-2">
+					<input type="number" class="form-control" id="distance" placeholder="0" value=5000>
+				</div>
+			</div>
+			<div class="form-group row justify-content-start">
+				<label class="col-sm-2 col-form-label">Center Point</label>
+				<div class="col-sm-10">
+					<input id='center-point' class="form-control" type="text" placeholder="latitude and longitude"
+						readonly>
+					<div id="map" style="height: 300px;"></div>
+					<script
+						src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyB_IABOxGxorcm3ZBHHsWmhSGlGFWuIpnM&callback=initMap&v=weekly"
+						async></script>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-sm-10">
+			<button id='query-send-btn' type="submit" class="btn btn-primary">Send</button>
+		</div>
+	</div>
+</div>
